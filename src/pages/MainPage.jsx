@@ -1,9 +1,9 @@
 import React from 'react'
-import NameLogo from '../components/NameLogo'
-import Designation from '../components/Designation'
-import Time from '../components/Time'
-import Links from '../components/Links'
-import About from '../components/About'
+import NameLogo from '../components/MainPage/NameLogo'
+import Designation from '../components/MainPage/Designation'
+import Time from '../components/MainPage/Time'
+import Links from '../components/MainPage/Links'
+import About from '../components/MainPage/About'
 
 const MainPage = () => {
     return (

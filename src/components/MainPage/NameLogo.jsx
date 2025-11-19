@@ -6,8 +6,8 @@ const NameLogo = () => {
     const navigate = useNavigate();
 
     return (
-        <div className='absolute top-0 left-0 p-12 cursor-pointer' onClick={() => navigate('/')}>
-            <h1 className='font-[font2] text-4xl sm:text-4xl md:text-5xl lg:text-7xl tracking-[-0.05rem] leading-[0.8]'>
+        <div className='absolute top-0 left-0 p-12'>
+            <h1 className='font-[font2] text-4xl sm:text-4xl md:text-5xl lg:text-7xl tracking-[-0.05rem] leading-[0.8] cursor-pointer'>
 
                 <Shuffle
                     text="ASTLE"
