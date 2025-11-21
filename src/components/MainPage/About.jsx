@@ -22,7 +22,7 @@ const About = () => {
 
     return (
         <div
-            className='absolute top-0 right-0 p-12 cursor-pointer'
+            className='p-0 cursor-pointer'
             onClick={() => navigate(isAboutPage ? '/' : '/about')}
         >
             <h1 className='about-title font-[font1] text-xs sm:text-xs md:text-md uppercase underline decoration-2 underline-offset-4'>

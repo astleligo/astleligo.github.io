@@ -11,8 +11,8 @@ const Time = () => {
 
         gsap.fromTo(
             ".time",
-            { y: 40, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+            { y: 0, opacity: 0 },
+            { y: 20, opacity: 1, duration: 0.8, ease: "power3.out" }
         );
     }, [time]); // <-- animation re-runs when time changes
 
@@ -38,7 +38,7 @@ const Time = () => {
     }, []);
 
     return (
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 p-4">
+        <div className="p-0">
             <h1 className="font-[font1] text-xs sm:text-sm md:text-md uppercase time">
                 {time} IST
             </h1>

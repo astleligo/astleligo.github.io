@@ -2,12 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Shuffle from '@/components/ui/shadcn-io/shuffle';
 
-const NameLogo = () => {
+const NameLogo = ({ about }) => {
     const navigate = useNavigate();
 
     return (
-        <div className='absolute top-0 left-0 p-12'>
-            <h1 className='font-[font2] text-4xl sm:text-4xl md:text-5xl lg:text-7xl tracking-[-0.05rem] leading-[0.8] cursor-pointer'>
+        <div className='cursor-pointer p-0'>
+            <h1
+                className={`font-[font2] tracking-[-0.05rem] leading-[0.8] font-medium ${about ? 'sm:text-4xl md:text-5xl lg:text-[9rem]' : 'text-6xl'}`}
+            >
 
                 <Shuffle
                     text="ASTLE"

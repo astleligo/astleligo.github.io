@@ -1,22 +1,80 @@
-import React from 'react'
-import About from '../components/MainPage/About'
-import Links from '../components/MainPage/Links'
-import Time from '../components/MainPage/Time'
-import Story from '../components/AboutPage/Story'
-import BrandHeader from '@/components/AboutPage/BrandHeader'
-
-
+import React from "react";
+import About from "../components/MainPage/About";
+import Links from "../components/MainPage/Links";
+import Time from "../components/MainPage/Time";
+import Story from "../components/AboutPage/Story";
+import NameLogo from "@/components/MainPage/NameLogo";
+import Status from "@/components/AboutPage/Status";
+import Achivements from "@/components/AboutPage/Achivements";
+import Designation from "@/components/MainPage/Designation";
+import Skiils from "@/components/AboutPage/Skiils";
+import Education from "@/components/AboutPage/Education";
+import Showcase from "@/components/AboutPage/Showcase";
+import Credits from "@/components/AboutPage/Credits";
 
 const AboutPage = () => {
     return (
-        <div>
-            <BrandHeader />
-            <About />
-            <Links position='left' />
-            <Time />
-            <Story />
-        </div>
-    )
-}
+        <div
+            className="
+                grid
+                grid-cols-12
+                grid-rows-12
+                h-screen
+                w-screen
+                px-10
+                py-8
+                gap-2
+            "
+        >
+            {/* TOP-LEFT → NameLogo + Status */}
+            <div className="col-start-1 col-end-2 row-start-1 row-end-4">
+                <NameLogo about={true} />
+            </div>
 
-export default AboutPage
+            <div className="col-start-1 col-end-3 row-start-7 row-end-8 flex flex-col justify-between">
+                <Designation />
+                <Status />
+            </div>
+
+            <div className="col-start-1 col-end-3 row-start-9 row-end-11 flex flex-col justify-center">
+                <Showcase />
+            </div>
+
+
+            {/* TOP-RIGHT → About */}
+            <div className="col-start-10 col-end-13 row-start-1 row-end-3 flex justify-end items-start">
+                <About />
+            </div>
+
+            {/* CENTER → Story */}
+            <div className="col-start-5 col-end-8 row-start-3 row-end-6 gap-3 flex flex-col">
+                <Story />
+            </div>
+            <div className="col-start-5 col-end-8 row-start-7 row-end-11 gap-3 flex flex-col">
+                <Achivements />
+            </div>
+            <div className="col-start-9 col-end-12 row-start-3 row-end-6 gap-3 flex flex-col">
+                <Skiils />
+            </div>
+            <div className="col-start-9 col-end-12 row-start-7 row-end-11 gap-3 flex flex-col">
+                <Education />
+            </div>
+
+            {/* BOTTOM-LEFT → Links */}
+            <div className="col-start-9 col-end-13 row-start-9 row-end-13 flex items-end justify-end">
+                <Links />
+            </div>
+
+            <div className="col-start-1 col-end-5 row-start-12 row-end-13 flex flex-col items-start justify-center">
+                <Credits />
+            </div>
+
+            {/* BOTTOM-CENTER → Time */}
+            <div className="col-start-5 col-end-9 row-start-11 row-end-13 flex items-end justify-center">
+                <Time />
+            </div>
+        </div>
+    );
+};
+
+export default AboutPage;

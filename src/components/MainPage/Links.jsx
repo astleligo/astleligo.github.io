@@ -52,7 +52,7 @@ const Links = ({ position = "right", className = "" }) => {
         <nav
             ref={containerRef}
             aria-label="social links"
-            className={`absolute bottom-0 p-6 md:p-12 flex flex-col-reverse gap-2 ${itemsAlignment} ${className}`}
+            className={`p-0 flex flex-col-reverse gap-2 ${itemsAlignment} ${className}`}
         >
             {LINKS.map((link, i) => {
                 const key = playKeys[i] ? `txt-${i}-${playKeys[i]}` : `txt-${i}`;
