@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import gsap from 'gsap';
 
 const About = () => {
-    const navigate = useNavigate();
     const location = useLocation();
     const isAboutPage = location.pathname === '/about';
 
+    // entrance animation
     useEffect(() => {
         gsap.fromTo(
             '.about-title',
@@ -18,17 +18,37 @@ const About = () => {
                 ease: 'power3.out'
             }
         );
-    }, [isAboutPage]); // Depend on page change for animation
+    }, [isAboutPage]);
+
+    const handleHoverIn = (e) => {
+        gsap.to(e.currentTarget, {
+            opacity: 0.7,
+            duration: 0.25,
+            ease: 'power2.out',
+        });
+    };
+
+    const handleHoverOut = (e) => {
+        gsap.to(e.currentTarget, {
+            opacity: 1,
+            duration: 0.25,
+            ease: 'power2.out',
+        });
+    };
 
     return (
-        <div
-            className='p-0 cursor-pointer'
-            onClick={() => navigate(isAboutPage ? '/' : '/about')}
+        <Link
+            to={isAboutPage ? "/" : "/about"}
+            className="p-0 cursor-pointer"
         >
-            <h1 className='about-title font-[font1] text-[0.5rem] sm:text-xs md:text-md uppercase underline decoration-2 underline-offset-4'>
+            <h1
+                className="about-title font-[font1] text-xs sm:text-xs md:text-base uppercase underline decoration-2 underline-offset-4"
+                onMouseEnter={handleHoverIn}
+                onMouseLeave={handleHoverOut}
+            >
                 {isAboutPage ? 'close' : 'about'}
             </h1>
-        </div>
+        </Link>
     );
 };
 

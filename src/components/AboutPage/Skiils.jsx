@@ -39,14 +39,14 @@ const Skiils = () => {
         <>
             <h1
                 ref={headRef}
-                className="font-bold font-[font1] uppercase text-lg"
+                className="font-bold font-[font1] uppercase text-xl"
             >
                 skills
             </h1>
 
             <ul
                 ref={paragraphRef}
-                className="list-square leading-relaxed text-xs font-[font1] font-semibold uppercase space-y-1"
+                className="list-square leading-relaxed text-xs font-[font1] font-semibold uppercase space-y-2"
             >
                 <li>html, css, javascript, react, tailwind, gsap</li>
                 <li>node.js, express.js, rest apis</li>

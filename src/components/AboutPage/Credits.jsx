@@ -19,14 +19,14 @@ const Credits = () => {
         <div>
             <p
                 ref={(el) => (lineRef.current[0] = el)}
-                className="uppercase font-[font1] text-[0.40rem] md:text-xs font-medium"
+                className="uppercase font-[font1] text-[0.5rem] md:text-xs font-medium"
             >
                 © 2025 ASTLE Ligo. All rights reserved.
             </p>
 
             <p
                 ref={(el) => (lineRef.current[1] = el)}
-                className="uppercase font-[font1] text-[0.35rem] font-medium"
+                className="uppercase font-[font1] text-[0.45rem] font-medium"
             >
                 Inspired by{" "}
                 <a

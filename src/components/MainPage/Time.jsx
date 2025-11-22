@@ -39,7 +39,7 @@ const Time = () => {
 
     return (
         <div className="p-0">
-            <h1 className="font-[font1] text-[0.5rem] sm:text-xs md:text-md uppercase time">
+            <h1 className="font-[font1] text-md sm:text-md uppercase time">
                 {time} IST
             </h1>
         </div>

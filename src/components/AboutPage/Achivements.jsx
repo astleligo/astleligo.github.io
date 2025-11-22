@@ -50,14 +50,14 @@ const Achivements = () => {
         <div ref={containerRef}>
             <h1
                 ref={headRef}
-                className="font-bold font-[font1] uppercase text-lg"
+                className="font-bold font-[font1] uppercase text-xl"
             >
                 Key Highlights
             </h1>
 
             <ul
                 ref={paragraphRef}
-                className="list-square leading-relaxed text-xs font-[font1] font-semibold uppercase space-y-1"
+                className="list-square leading-relaxed text-xs font-[font1] font-semibold uppercase space-y-2"
             >
                 <li>350+ LeetCode problems solved</li>
                 <li>25+ national-level awards</li>

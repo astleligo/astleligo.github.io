@@ -6,9 +6,9 @@ const NameLogo = ({ about }) => {
     const navigate = useNavigate();
 
     return (
-        <div className='cursor-pointer' onClick={() => navigate('/')}>
+        <div className='cursor-pointer' onClick={() => navigate('/')} tabIndex={0}>
             <h1
-                className={`font-[font2] tracking-[-0.05rem] leading-[0.8] font-medium text-4xl ${about ? 'sm:text-5xl md:text-5xl lg:text-[9rem]' : 'text-6xl'}`}
+                className={`font-[font2] tracking-[0.01rem] leading-[0.8] font-medium text-5xl ${about ? 'sm:text-5xl md:text-5xl lg:text-[9rem]' : 'text-5xl'}`}
             >
 
                 <Shuffle

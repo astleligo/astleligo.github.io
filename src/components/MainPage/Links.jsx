@@ -3,10 +3,10 @@ import gsap from "gsap";
 import { RollingText } from "@/components/ui/shadcn-io/rolling-text";
 
 const LINKS = [
-    { label: "Instagram", href: "https://instagram.com/astle.dev", external: true },
-    { label: "LinkedIn", href: "https://linkedin.com/in/astle-ligo", external: true },
-    { label: "GitHub", href: "https://github.com/Astle-Ligo", external: true },
     { label: "Email", href: "mailto:astleligo@gmail.com", external: false },
+    { label: "GitHub", href: "https://github.com/Astle-Ligo", external: true },
+    { label: "LinkedIn", href: "https://linkedin.com/in/astle-ligo", external: true },
+    { label: "Instagram", href: "https://instagram.com/astle.dev", external: true },
 ];
 
 const prefersReducedMotion = () =>
@@ -52,7 +52,7 @@ const Links = ({ position = "right", className = "" }) => {
         <nav
             ref={containerRef}
             aria-label="social links"
-            className={`p-0 flex flex-col-reverse gap-2 ${itemsAlignment} ${className} font-[font1] text-[0.5rem] sm:text-[0.5rem] md:text-sm uppercase`}
+            className={`p-0 flex flex-col gap-2 ${itemsAlignment} ${className} font-[font1] text-xs sm:text-xs md:text-sm uppercase`}
         >
             {LINKS.map((link, i) => {
                 const key = playKeys[i] ? `txt-${i}-${playKeys[i]}` : `txt-${i}`;

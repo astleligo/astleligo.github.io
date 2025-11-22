@@ -15,76 +15,65 @@ import Credits from "@/components/AboutPage/Credits";
 const AboutPage = () => {
     return (
         <div className="w-screen h-screen overflow-hidden">
-            {/* ========== MOBILE / TABLET LAYOUT (matches your mobile screenshot) ========== */}
-            <div className="lg:hidden h-full w-full px-4 py-6 flex flex-col gap-8 overflow-y-auto">
+            {/* ========== MOBILE / TABLET LAYOUT ========== */}
+            <div className="lg:hidden min-h-screen w-full px-4 py-6 flex flex-col gap-8">
                 {/* Top row: Logo | Designation+Status | About(CLOSE) */}
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-center justify-between">
                     <div className="shrink-0">
                         <NameLogo about={true} />
                     </div>
-
-                    <div className="flex flex-col items-start gap-1 mt-1">
+                    <div className="flex flex-col items-center gap-1">
                         <Designation />
                         <Status />
                     </div>
-
-                    <div className="shrink-0">
+                    <div className="shrink-0 self-start">
                         <About />
                     </div>
                 </div>
-
                 {/* Showcase row */}
                 <div>
                     <Showcase />
                 </div>
-
-                <div className="px-4 flex flex-col gap-6">
-                    {/* Journey */}
+                {/* Journey / Highlights / Skills / Education */}
+                <div className="px-8 flex flex-col gap-8">
                     <div>
                         <Story />
                     </div>
-
-                    {/* Key Highlights */}
                     <div>
                         <Achivements />
                     </div>
-
-                    {/* Skills */}
                     <div>
                         <Skiils />
                     </div>
-
-                    {/* Education */}
                     <div>
                         <Education />
                     </div>
                 </div>
-
                 {/* Bottom row: Credits | Time | Links */}
-                <div className="mt-auto flex items-end justify-center">
-                    <div className="flex-1 flex flex-col justify-between h-full">
+                <div className="flex items-stretch justify-center gap-4">
+                    <div className="flex-1 flex flex-col justify-between">
                         <Time />
                         <Credits />
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 flex items-end justify-end">
                         <Links />
                     </div>
                 </div>
             </div>
 
-            {/* ========== LAPTOP / DESKTOP LAYOUT (your original grid, unchanged) ========== */}
+            {/* ========== LAPTOP / DESKTOP LAYOUT (original grid) ========== */}
             <div
                 className="
-          hidden
-          lg:grid
-          grid-cols-12
-          grid-rows-12
-          h-full
-          w-full
-          px-10
-          py-8
-          gap-2
-        "
+                    hidden
+                    lg:grid
+                    grid-cols-12
+                    grid-rows-12
+                    h-full
+                    w-full
+                    px-10
+                    py-8
+                    gap-2
+                "
             >
                 {/* TOP-LEFT → NameLogo */}
                 <div className="col-start-1 col-end-2 row-start-1 row-end-4">

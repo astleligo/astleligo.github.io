@@ -39,14 +39,14 @@ const Education = () => {
         <>
             <h1
                 ref={headRef}
-                className="font-bold font-[font1] uppercase text-lg"
+                className="font-bold font-[font1] uppercase text-xl"
             >
                 Education
             </h1>
 
             <ul
                 ref={paragraphRef}
-                className="list-square leading-relaxed text-xs font-[font1] font-semibold uppercase space-y-1"
+                className="list-square leading-relaxed text-xs font-[font1] font-semibold uppercase space-y-2"
             >
                 <li>Bachelor of Computer Applications (BCA)</li>
                 <li>St. Joseph’s University</li>

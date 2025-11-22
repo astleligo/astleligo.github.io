@@ -33,7 +33,7 @@ const Designation = ({ show }) => {
             <h1
                 className="
     font-[font1]
-    text-xs
+    text-sm
     sm:text-sm
     md:text-md
     lg:text-lg
