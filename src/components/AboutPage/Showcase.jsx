@@ -26,7 +26,7 @@ const Showcase = () => {
     }, []);
 
     return (
-        <div className="leading-relaxed text-sm font-[font1] font-bold uppercase space-y-1">
+        <div className="leading-relaxed text-sm font-[font1] font-bold uppercase gap-2 flex lg:flex-col justify-evenly">
             {items.map((item, index) => (
                 <a
                     key={item.label}

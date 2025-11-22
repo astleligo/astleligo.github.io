@@ -31,10 +31,20 @@ const Designation = ({ show }) => {
     return (
         <div className="p-0">
             <h1
-                className="font-[font1] text-sm sm:text-sm md:text-md uppercase font-bold cursor-default"
+                className="
+    font-[font1]
+    text-xs
+    sm:text-sm
+    md:text-md
+    lg:text-lg
+    uppercase
+    font-bold
+    cursor-default
+  "
                 onMouseEnter={show ? () => setHover(true) : undefined}
                 onMouseLeave={show ? () => setHover(false) : undefined}
             >
+
                 {animated
                     ? targetText
                     : DEFAULT_TEXT.split("").map((c, i) => (

@@ -52,7 +52,7 @@ const Links = ({ position = "right", className = "" }) => {
         <nav
             ref={containerRef}
             aria-label="social links"
-            className={`p-0 flex flex-col-reverse gap-2 ${itemsAlignment} ${className}`}
+            className={`p-0 flex flex-col-reverse gap-2 ${itemsAlignment} ${className} font-[font1] text-[0.5rem] sm:text-[0.5rem] md:text-sm uppercase`}
         >
             {LINKS.map((link, i) => {
                 const key = playKeys[i] ? `txt-${i}-${playKeys[i]}` : `txt-${i}`;
@@ -65,7 +65,7 @@ const Links = ({ position = "right", className = "" }) => {
                         target={link.external ? "_blank" : undefined}
                         rel={link.external ? "noopener noreferrer" : undefined}
                         data-anim-target
-                        className="font-[font1] text-xs md:text-md uppercase tracking-wider"
+                        className=" tracking-wider"
                         style={{ display: "flex", alignItems: "center" }}
                         onMouseEnter={() => handleEnter(i)}
                         onMouseLeave={handleLeave}

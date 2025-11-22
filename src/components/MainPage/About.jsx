@@ -25,7 +25,7 @@ const About = () => {
             className='p-0 cursor-pointer'
             onClick={() => navigate(isAboutPage ? '/' : '/about')}
         >
-            <h1 className='about-title font-[font1] text-xs sm:text-xs md:text-md uppercase underline decoration-2 underline-offset-4'>
+            <h1 className='about-title font-[font1] text-[0.5rem] sm:text-xs md:text-md uppercase underline decoration-2 underline-offset-4'>
                 {isAboutPage ? 'close' : 'about'}
             </h1>
         </div>

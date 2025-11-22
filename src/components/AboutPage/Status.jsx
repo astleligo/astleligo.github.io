@@ -39,7 +39,7 @@ const Status = ({ status = "Ready to Work" }) => {
     return (
         <div
             ref={containerRef}
-            className="inline-flex items-center gap-1 text-[0.75rem] font-[font1] uppercase font-medium"
+            className="inline-flex items-center gap-1 text-[0.5rem] md:text-xs font-[font1] uppercase font-medium"
         >
             {/* Animated status dot */}
             <span
