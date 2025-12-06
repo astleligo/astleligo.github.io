@@ -1,9 +1,16 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 
-// Horizontal slider that responds to VERTICAL mouse wheel
-// Container size: height 40rem, width 160rem
-// JSX + TailwindCSS
+import img0 from "../../assets/Thumbnails/0tejas.png";
+import img1 from "../../assets/Thumbnails/1ccp.png";
+import img2 from "../../assets/Thumbnails/2dv.png";
+import img3 from "../../assets/Thumbnails/3treasure.png";
+import img4 from "../../assets/Thumbnails/4football.png";
+import img5 from "../../assets/Thumbnails/5portfolio.png";
+import img6 from "../../assets/Thumbnails/6tech.png";
+import img7 from "../../assets/Thumbnails/7tt.png";
+
+const thumbnailImages = [img0, img1, img2, img3, img4, img5, img6, img7];
 
 function projectSlide() {
     const containerRef = useRef(null);
@@ -50,36 +57,44 @@ function projectSlide() {
     };
 
     return (
-        <>
-            <div className="relative h-full w-[160rem] overflow-hidden">
-                <div
-                    ref={containerRef}
-                    onWheel={handleWheel}
-                    className="no-scrollbar h-full w-full overflow-x-scroll overflow-y-hidden [scrollbar-width:none] [-ms-overflow-style:none]"
-                >
-                    {/* Hide scrollbar only for this container */}
-                    <style>{`
+        <div className="relative h-full w-full overflow-hidden">
+            <div
+                ref={containerRef}
+                onWheel={handleWheel}
+                className="no-scrollbar h-full w-full overflow-x-scroll overflow-y-hidden [scrollbar-width:none] [-ms-overflow-style:none]"
+            >
+                {/* Hide scrollbar only for this container */}
+                <style>{`
             .no-scrollbar::-webkit-scrollbar {
               display: none;
             }
           `}</style>
 
-                    {/* First rectangle starts roughly from center visually */}
-                    <div className="flex h-full w-full items-center gap-2">
-                        <div className="w-1/2 h-full flex-none "></div>
-                        {Array.from({ length: 10 }).map((_, index) => (
-                            <div
-                                key={index}
-                                className="project-panel h-[90%] w-[7.5rem] flex-none bg-yellow-500">
-                                <p>{index}</p>
-                            </div>
-                        ))}
-                        <div className="w-1/2 h-full flex-none "></div>
+                {/* First rectangle starts roughly from center visually */}
+                <div className="flex h-full w-full items-center gap-4">
+                    <div className="w-1/2 h-full flex-none z-10"></div>
+                    {thumbnailImages.map((src, index) => (
+                        <div
+                            key={index}
+                            className="project-panel h-[50%] w-[6rem] flex-none">
+                            <img
+                                src={src}
+                                alt=""
+                                className="
+                                    w-full h-full object-cover 
+                                    grayscale 
+                                    hover:grayscale-25
+                                    transition-all duration-300 ease-out 
+                                "
+                            />
 
-                    </div>
+                        </div>
+                    ))}
+                    <div className="w-1/2 h-full flex-none "></div>
+
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
