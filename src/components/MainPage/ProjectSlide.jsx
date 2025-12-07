@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import LoadingScreen from "./LoadingScreen";
+import ProjectPage from "./ProjectPage";
 
 import img0 from "../../assets/Thumbnails/0tejas.png";
 import img1 from "../../assets/Thumbnails/1ccp.png";
@@ -17,18 +18,16 @@ function ProjectSlide() {
     const containerRef = useRef(null);
     const totalImages = thumbnailImages.length;
 
-    // Has this user already loaded all thumbnails in this session?
+    // ----- Loader state -----
     const [hasLoadedOnce] = useState(() => {
         if (typeof window === "undefined") return false;
         return sessionStorage.getItem("thumbnailsLoaded") === "true";
     });
 
-    // If already loaded once, start as fully loaded
     const [loaded, setLoaded] = useState(() =>
         hasLoadedOnce ? totalImages : 0
     );
 
-    // If already loaded once, don't even render the loader
     const [showLoader, setShowLoader] = useState(() => !hasLoadedOnce);
 
     const progress = Math.min(
@@ -40,20 +39,33 @@ function ProjectSlide() {
         setLoaded((prev) => {
             const next = prev + 1;
 
-            // When all images are loaded for the first time,
-            // remember that for this session
             if (next >= totalImages) {
                 try {
                     sessionStorage.setItem("thumbnailsLoaded", "true");
-                } catch (e) {
-                    // ignore if sessionStorage not available
-                }
+                } catch (e) { }
             }
 
             return next;
         });
     };
 
+    // ----- Modal state (for ProjectPage) -----
+    const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
+    const [isProjectOpen, setIsProjectOpen] = useState(false);
+
+    const openProject = (index) => {
+        setSelectedProjectIndex(index);
+        setIsProjectOpen(true);
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeProject = () => {
+        setIsProjectOpen(false);
+        setSelectedProjectIndex(null);
+        document.body.style.overflow = "";
+    };
+
+    // ----- Scroll skew -----
     const handleWheel = (e) => {
         const container = containerRef.current;
         if (!container) return;
@@ -92,6 +104,7 @@ function ProjectSlide() {
 
     return (
         <div className="relative h-full w-full overflow-hidden">
+            {/* Loader */}
             {showLoader && (
                 <LoadingScreen
                     progress={progress}
@@ -99,6 +112,7 @@ function ProjectSlide() {
                 />
             )}
 
+            {/* Thumbnails row */}
             <div
                 ref={containerRef}
                 onWheel={handleWheel}
@@ -111,12 +125,13 @@ function ProjectSlide() {
         `}</style>
 
                 <div className="flex h-full w-full items-center gap-4">
-                    <div className="w-1/2 h-full flex-none z-10"></div>
+                    <div className="w-1/2 h-full flex-none z-10" />
 
                     {thumbnailImages.map((src, index) => (
                         <div
                             key={index}
-                            className="project-panel h-[50%] w-[6rem] flex-none"
+                            className="project-panel h-[50%] w-[6rem] flex-none cursor-pointer"
+                            onClick={() => openProject(index)} // ✅ important: callback
                         >
                             <img
                                 src={src}
@@ -128,14 +143,21 @@ function ProjectSlide() {
                   transition-all duration-300 ease-out 
                 "
                                 onLoad={handleImageLoad}
-                                onError={handleImageLoad} // still count failures
+                                onError={handleImageLoad}
                             />
                         </div>
                     ))}
 
-                    <div className="w-1/2 h-full flex-none "></div>
+                    <div className="w-1/2 h-full flex-none" />
                 </div>
             </div>
+
+            {/* Single ProjectPage instance controls its own modal UI */}
+            <ProjectPage
+                isOpen={isProjectOpen}
+                onClose={closeProject}
+                projectIndex={selectedProjectIndex}
+            />
         </div>
     );
 }
