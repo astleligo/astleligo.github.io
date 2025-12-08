@@ -39,7 +39,7 @@ const Skiils = () => {
         <>
             <h1
                 ref={headRef}
-                className="font-bold font-[font1] uppercase text-xl"
+                className="font-black font-[font1] uppercase text-xl"
             >
                 skills
             </h1>

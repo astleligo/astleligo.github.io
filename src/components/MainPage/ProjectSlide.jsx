@@ -1,6 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 import gsap from "gsap";
 import ProjectPage from "./ProjectPage";
+
 
 import img0 from "../../assets/Thumbnails/0tejas.png";
 import img1 from "../../assets/Thumbnails/1ccp.png";
@@ -13,7 +14,7 @@ import img7 from "../../assets/Thumbnails/7tt.png";
 
 const thumbnailImages = [img0, img1, img2, img3, img4, img5, img6, img7];
 
-function ProjectSlide({ onProgress }) {
+function ProjectSlide({ onProgress, isReady }) {
     const containerRef = useRef(null);
     const totalImages = thumbnailImages.length;
 
@@ -32,6 +33,26 @@ function ProjectSlide({ onProgress }) {
         setLoaded((prev) => Math.min(prev + 1, totalImages));
     };
 
+    useLayoutEffect(() => {
+        if (!isReady || !containerRef.current) return;
+
+        const ctx = gsap.context(() => {
+            const panels = containerRef.current.querySelectorAll(".project-panel");
+            if (!panels.length) return;
+
+            gsap.from(panels, {
+                x: 1000,
+                skewY: 20,
+                transformOrigin: "center center",
+                opacity: 0,
+                stagger: 0.15,
+                duration: 1.5,
+                ease: "power3.out",
+            });
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, [isReady]);
 
     // Modal state
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);

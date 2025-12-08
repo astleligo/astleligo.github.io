@@ -17,8 +17,25 @@ body {
   background-color: #3a0822;
   color: #bac4b8;
   overflow: hidden;
-  /* overflow-y: auto; */
 }
+
+/* Works on Chrome, Edge, Safari, Opera */
+.no-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE, Edge (older versions) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
+
 
 /* @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

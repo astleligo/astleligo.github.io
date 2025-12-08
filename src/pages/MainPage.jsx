@@ -75,7 +75,7 @@ const MainPage = () => {
 
                 {/* CENTER → Projects rail */}
                 <div className="col-start-1 col-end-13 row-start-3 row-end-11 flex items-center justify-center">
-                    <ProjectSlide onProgress={handleProgress} />
+                    <ProjectSlide onProgress={handleProgress} isReady={isReady} />
                 </div>
 
                 {/* BOTTOM-LEFT → Status + Designation */}

@@ -39,7 +39,7 @@ const Education = () => {
         <>
             <h1
                 ref={headRef}
-                className="font-bold font-[font1] uppercase text-xl"
+                className="font-black font-[font1] uppercase text-xl"
             >
                 Education
             </h1>
@@ -48,7 +48,7 @@ const Education = () => {
                 ref={paragraphRef}
                 className="list-square leading-relaxed text-xs font-[font1] font-semibold uppercase space-y-2"
             >
-                <li>Bachelor of Computer Applications (BCA)</li>
+                <li className='font-bold text-sm'>Bachelor of Computer Applications (BCA)</li>
                 <li>St. Joseph’s University</li>
                 <li>Graduation Year: 2025</li>
                 <li>CGPA: 7.38 / 10</li>

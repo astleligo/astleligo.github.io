@@ -30,7 +30,7 @@ const NameLogo = ({ about, isReady }) => {
             tabIndex={0}
         >
             <h1
-                className={`font-[font2] tracking-[0.01rem] leading-[0.8] font-medium text-5xl ${about ? "sm:text-5xl md:text-5xl lg:text-[9rem]" : "text-5xl"
+                className={`font-[font2] tracking-[0.01rem] leading-[0.8] font-medium text-7xl ${about ? "sm:text-5xl md:text-5xl lg:text-[9rem]" : "text-5xl"
                     }`}
             >
                 <Shuffle
