@@ -80,7 +80,7 @@ export const PROJECTS = [
         gitLink: "https://github.com/Astle-Ligo/collabrative-coding-platform",
         cilent: "Personal",
         role: "Full-stack Developer",
-        techStack: ["React", "Node.js", "Express", "MongoDB", "Judge0", "Websocket"],
+        techStack: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Judge0", "Websocket", "AWS EC2"],
         images: [ccp0, ccp1, ccp2,],
     },
     {

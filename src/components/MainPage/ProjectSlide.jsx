@@ -136,6 +136,9 @@ function ProjectSlide({ onProgress, isReady }) {
                 w-full h-full object-cover 
                 grayscale 
                 hover:grayscale-0
+                hover:scale-[1.1]
+                rounded-lg
+                hover:rounded-none
                 transition-all duration-300 ease-out 
             "
                                 onLoad={() => handleImageLoad(src, index, "load")}

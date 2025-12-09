@@ -45,8 +45,9 @@ const Status = ({ status = "Ready to Work", isReady }) => {
                 ref={dotRef}
                 className={`w-1 h-1 rounded-full ${dotColor} bg-current`}
             />
-            {status}
-            <span className="font-bold text-sm border-l-2 md:border-l-3 w-12 h-4 lg:h-5 flex items-center justify-center">
+            <span className="font-bold text-sm flex items-center gap-1">
+                {status}
+                <span className="text-lg font-black leading-none">i</span>
                 India
             </span>
         </div>
