@@ -35,7 +35,7 @@ function ProjectPage({ isOpen, onClose, projectIndex }) {
                 </button>
 
                 {/* Main layout: 3 sections */}
-                <div className="grid gap-6 md:grid-cols-[1fr_2fr_0.6fr] md:gap-8 h-[90%]">
+                <div className="grid gap-6 md:grid-cols-[1fr_2fr_0.5fr] md:gap-8 h-[90%]">
                     {/* 1. Details area (now includes title + meta) */}
                     <div className="space-y-4 md:space-y-5 text-sm md:text-base leading-relaxed">
                         {/* Title + meta chips */}
@@ -115,16 +115,15 @@ function ProjectPage({ isOpen, onClose, projectIndex }) {
 
                     {/* 2. Big photo area */}
                     <div className="flex flex-col items-center justify-evenly">
-                        {/* <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
-                            Preview
-                        </h3> */}
 
-                        <div className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden rounded-xl border border-white/15 bg-white/5">
+                        <div
+                            className="relative aspect-[2.2106] h-[50vh] w-full flex items-start justify-center overflow-y-scroll rounded-xl border border-white/15 bg-white/5 no-scrollbar"
+                        >
                             {activeImageSrc ? (
                                 <img
                                     src={activeImageSrc}
                                     alt={`${project.title} screenshot ${activeImageIndex + 1}`}
-                                    className="max-h-full max-w-full object-contain"
+                                    className="w-full h-auto"
                                 />
                             ) : (
                                 <div className="flex h-full w-full items-center justify-center text-xs md:text-sm text-white/50">
@@ -133,6 +132,8 @@ function ProjectPage({ isOpen, onClose, projectIndex }) {
                             )}
                         </div>
                     </div>
+
+
 
                     {/* 3. Side small gallery area */}
                     <div className="flex flex-col">
