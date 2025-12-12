@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import Resume from '@/assets/resume/Astle-fullStack-Resume.pdf';
+import Resume from '@/assets/resume/Astle-fullstack-public.pdf';
 
 const Showcase = () => {
     const linksRef = useRef([]);
