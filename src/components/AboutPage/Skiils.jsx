@@ -51,7 +51,7 @@ const Skiils = () => {
                 <li>html, css, javascript, react, tailwind, gsap</li>
                 <li>node.js, express.js, rest apis</li>
                 <li>data structures & algorithms</li>
-                <li>c, c++, python</li>
+                <li>python, javascript</li>
                 <li>git, github, postman, aws</li>
             </ul>
         </>
