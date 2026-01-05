@@ -52,7 +52,7 @@ const Achivements = () => {
                 ref={paragraphRef}
                 className="list-square leading-relaxed text-xs font-[font1] font-semibold uppercase space-y-2"
             >
-                <li>350+ LeetCode problems solved</li>
+                <li>400+ LeetCode problems solved</li>
                 <li>25+ national-level awards</li>
                 <li>Hosted 7+ technical events</li>
                 <li>Represented SJU at IITs, NITs & VIT</li>
