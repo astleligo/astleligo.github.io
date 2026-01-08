@@ -40,7 +40,7 @@ const Achivements = () => {
     }, []);
 
     return (
-        <div ref={containerRef}>
+        <>
             <h1
                 ref={headRef}
                 className="font-black font-[font1] uppercase text-xl"
@@ -52,13 +52,12 @@ const Achivements = () => {
                 ref={paragraphRef}
                 className="list-square leading-relaxed text-xs font-[font1] font-semibold uppercase space-y-2"
             >
-                <li>400+ LeetCode problems solved</li>
                 <li>25+ national-level awards</li>
                 <li>Hosted 7+ technical events</li>
                 <li>Represented SJU at IITs, NITs & VIT</li>
                 <li>General Secretary, Cybernetics Association 2023-24</li>
             </ul>
-        </div>
+        </>
     );
 };
 
